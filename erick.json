@@ -1,0 +1,20 @@
+{
+  "names":[
+    "Erick",
+    "Jesus"
+  ],
+  "secondNames":[
+    "Lopez",
+    "Torres"
+  ],
+  "birthDate":{
+    "day":11,
+    "month":11,
+    "year":2009
+  },
+  "skills":[
+    "programming",
+    "musician",
+    "intelligent"
+  ]
+}

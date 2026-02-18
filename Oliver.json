@@ -1,15 +1,15 @@
 {
-  "firstName": "Oliver",
-  "lastName": "Peralta Trujillo",
-  "email": "peralta.trujillo.oliver.m3s2@gmail.com",
-  "dateOfBirth": "2009-03-09",
-  "hobbies": [
-    "audiophile",
-    "RPG gaming"
-  ],
-  "friends": "unknown",
-  "skills": [
-    "logical",
-    "hierarchical organizer"
-  ]
+    "firstName": "Oliver",
+    "lastName": "Peralta Trujillo",
+    "email": "peralta.trujillo.oliver.m3s2@gmail.com",
+    "dateOfBirth": "2009-03-09",
+    "hobbies": [
+        "audiophile",
+        "RPG gaming"
+    ],
+    "friends": "unknown",
+    "skills": [
+        "logical",
+        "hierarchical organizer"
+    ]
 }

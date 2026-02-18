@@ -1,0 +1,39 @@
+{
+  "names": [
+    "Jorge"
+  ],
+  "secondNames": [
+    "Florencio",
+    "Severiano"
+  ],
+  "BirthDate":{
+    "day": 2,
+    "month": 9,
+    "year": 2009
+  },
+  "skills":[
+    "goodForDrawing",
+    "goodAtVideogames",
+    "goodForWriting"
+  ],
+  "friends":[
+    {
+      "Name": "Lerv",
+      "Last name": "Zaragoza Martinez",
+      "Birthdate": "2006-06-17"
+    },
+
+{
+      "Name": "Alessandra",
+      "Last name": "Ramirez Flores",
+      "Birthdate": "2009-04-12"
+    },
+ 
+
+{
+      "Name": "Marlene",
+      "Last name": "castillo de la paz",
+      "Birthdate": "2009-12-23"
+  }
+ ]
+}

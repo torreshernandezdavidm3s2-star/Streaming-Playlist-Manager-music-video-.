@@ -35,40 +35,45 @@ This means:
 ## Mermaid Diagram (MongoDB Document Model)
 
 ```mermaid
-flowchart TD
+erDiagram
+    %% ==========================================
+    %% PARTE 1: REGISTRO Y ENTIDAD DE USUARIO
+    %% (Criterio: Registro de cuenta y Metadata)
+    %% ==========================================
+    USER {
+        ObjectId user_id PK "Generado automáticamente"
+        string nombre
+        string nombre_usuario
+        int edad
+        string correo
+        string genero
+    }
 
-    USER["USER Document
-    ---
-    _id : ObjectId
-    name : string
-    username : string
-    age : int
-    email : string
-    gender : string
-    playlists : array"]
+    %% ==========================================
+    %% PARTE 2: CREACIÓN Y AUTORÍA 
+    %% (Criterio: Relación entre Creador y Playlist)
+    %% ==========================================
+    USER ||--o{ PLAYLIST : "crea y es autor de"
+    
+    PLAYLIST {
+        ObjectId playlist_id PK
+        string nombre_playlist
+        date fecha_creacion
+    }
 
-    PLAYLIST["PLAYLIST Embedded Document
-    ---
-    playlist_id : ObjectId
-    playlist_name : string
-    created_at : date
-    songs : array"]
+    %% ==========================================
+    %% PARTE 3: DETALLE DEL CONTENIDO
+    %% (Criterio: Listado de canciones detallado)
+    %% ==========================================
+    PLAYLIST ||--o{ SONG : "contiene"
 
-    SONG["SONG Embedded Document
-    ---
-    song_id : ObjectId
-    name : string
-    duration : string
-    artist : string
-    genre : string"]
-
-    USER -->|embeds| PLAYLIST
-    PLAYLIST -->|embeds| SONG
-```
-
----
-
-## MongoDB Example Document
+    SONG {
+        ObjectId song_id PK
+        string nombre_cancion
+        string duracion
+        string artista "Creador de la canción"
+        string genero_musical
+    }## MongoDB Example Document
 
 Example of how data is stored in MongoDB:
 
@@ -126,4 +131,3 @@ This model uses embedding because:
 * BSON / JSON
 * Mermaid.js
 * GitHub Markdown
-

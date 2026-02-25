@@ -1,38 +1,38 @@
 # Playlist System – NoSQL Data Model (MongoDB)
- 
+
 ## Description
- 
+
 This project represents a data model for a music playlist system using a NoSQL approach based on MongoDB Document Model.
- 
+
 Users can:
- 
+
 * Create an account
 * Create playlists
 * Add songs to playlists
 * Allow other users to view playlist author and songs
- 
+
 This model uses embedded documents to optimize read performance, which is a recommended practice in MongoDB.
- 
+
 ---
- 
+
 ## NoSQL Document Structure Overview
- 
+
 Hierarchy:
- 
+
 User
 └── playlists[]
 └── songs[]
 
- 
+
 This means:
- 
+
 * A User document embeds many Playlist documents
 * Each Playlist embeds many Song documents
- 
+
 ---
- 
+
 ## Mermaid Diagram (MongoDB Document Model)
- 
+
 ```mermaid
 erDiagram
     %% ==========================================
@@ -73,10 +73,11 @@ erDiagram
         string artista "Creador de la canción"
         string genero_musical
     }
+```
 MongoDB Example Document
 Example of how data is stored in MongoDB:
 
-JSON
+```json
 {
   "_id": "65f1a2b3c4d5e6f7890abcde",
   "nombre": "Erick Lopez",
@@ -108,7 +109,8 @@ JSON
     }
   ]
 }
-Design Approach
+```
+## Design Approach
 This model uses embedding because:
 
 Playlists belong to a single user
@@ -121,7 +123,7 @@ Embedding improves read performance
 
 Reduces the need for joins (which MongoDB does not use)
 
-Technologies
+## Technologies
 MongoDB
 
 BSON / JSON

@@ -1,35 +1,39 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "nombre": "Jorge",
-      "user_name": "Yiussepe2",
-      "age": 21,
-      "email": "PuesMiCorreo@email.com"
-    }
-  ],
-  "playlists": [
-    {
-      "id": 1,
-      "user_id": 1,
-      "nombre_playlist": "PaHecharLaWeba",
-      "fecha_creacion": "2026-02-27"
-    }
-  ],
-  "songs": [
-    {
-      "id": 1,
-      "nombre_cancion": "Blinding Lights",
-      "duracion": "3:20",
-      "artista": "The Weeknd",
-      "genero_musical": "Pop"
-    },
-    {
-      "id": 2,
-      "nombre_cancion": "Bohemian Rhapsody",
-      "duracion": "5:55",
-      "artista": "Queen",
-      "genero_musical": "Rock"
+"users": [
+{
+"id": 1,
+"name": "Jorge",
+"user_name": "Yiussepe2",
+"age": 21,
+"email": "PuesMiCorreo@email.com"
+
+}
+],
+"playlists": [
+{
+"id": 1,
+"user_id": 1,
+"playlist_name": "PaHecharLaWeba",
+"creation_date": "2026-02-27"
+
+}
+],
+"songs": [
+{
+"id": 1,
+"song_name": "Blinding Lights",
+"duration": "3:20",
+"artist": "The Weeknd",
+"music_genre": "Pop"
+
+},
+{
+"id": 2,
+"song_name": "Bohemian Rhapsody",
+"duration": "5:55",
+
+      "artist": "Queen",
+      "musical_genre": "Rock"
     }
   ],
   "playlist_songs": [
@@ -43,3 +47,4 @@
     }
   ]
 }
+ 

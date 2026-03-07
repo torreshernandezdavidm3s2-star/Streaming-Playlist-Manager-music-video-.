@@ -1,0 +1,605 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "User1",
+      "user_name": "user_6997",
+      "age": 28,
+      "email": "user1@mail.com"
+    },
+    {
+      "id": 2,
+      "name": "User2",
+      "user_name": "user_2319",
+      "age": 33,
+      "email": "user2@mail.com"
+    },
+    {
+      "id": 3,
+      "name": "User3",
+      "user_name": "user_7420",
+      "age": 21,
+      "email": "user3@mail.com"
+    },
+    {
+      "id": 4,
+      "name": "User4",
+      "user_name": "user_5336",
+      "age": 35,
+      "email": "user4@mail.com"
+    },
+    {
+      "id": 5,
+      "name": "User5",
+      "user_name": "user_3124",
+      "age": 32,
+      "email": "user5@mail.com"
+    },
+    {
+      "id": 6,
+      "name": "User6",
+      "user_name": "user_3609",
+      "age": 25,
+      "email": "user6@mail.com"
+    },
+    {
+      "id": 7,
+      "name": "User7",
+      "user_name": "user_7576",
+      "age": 27,
+      "email": "user7@mail.com"
+    },
+    {
+      "id": 8,
+      "name": "User8",
+      "user_name": "user_5755",
+      "age": 33,
+      "email": "user8@mail.com"
+    },
+    {
+      "id": 9,
+      "name": "User9",
+      "user_name": "user_5483",
+      "age": 30,
+      "email": "user9@mail.com"
+    },
+    {
+      "id": 10,
+      "name": "User10",
+      "user_name": "user_7317",
+      "age": 32,
+      "email": "user10@mail.com"
+    },
+    {
+      "id": 11,
+      "name": "User11",
+      "user_name": "user_9257",
+      "age": 35,
+      "email": "user11@mail.com"
+    },
+    {
+      "id": 12,
+      "name": "User12",
+      "user_name": "user_8256",
+      "age": 31,
+      "email": "user12@mail.com"
+    },
+    {
+      "id": 13,
+      "name": "User13",
+      "user_name": "user_6323",
+      "age": 22,
+      "email": "user13@mail.com"
+    },
+    {
+      "id": 14,
+      "name": "User14",
+      "user_name": "user_8634",
+      "age": 22,
+      "email": "user14@mail.com"
+    },
+    {
+      "id": 15,
+      "name": "User15",
+      "user_name": "user_5558",
+      "age": 21,
+      "email": "user15@mail.com"
+    }
+  ],
+  "playlists": [
+    {
+      "id": 1,
+      "user_id": 6,
+      "playlist_name": "Playlist_Electric",
+      "creation_date": "2026-08-21"
+    },
+    {
+      "id": 2,
+      "user_id": 8,
+      "playlist_name": "Playlist_Heart",
+      "creation_date": "2026-06-26"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "playlist_name": "Playlist_Electric",
+      "creation_date": "2026-02-26"
+    },
+    {
+      "id": 4,
+      "user_id": 3,
+      "playlist_name": "Playlist_Midnight",
+      "creation_date": "2026-01-13"
+    },
+    {
+      "id": 5,
+      "user_id": 11,
+      "playlist_name": "Playlist_Storm",
+      "creation_date": "2026-02-14"
+    },
+    {
+      "id": 6,
+      "user_id": 9,
+      "playlist_name": "Playlist_Heart",
+      "creation_date": "2026-03-27"
+    },
+    {
+      "id": 7,
+      "user_id": 7,
+      "playlist_name": "Playlist_Fire",
+      "creation_date": "2026-05-15"
+    },
+    {
+      "id": 8,
+      "user_id": 14,
+      "playlist_name": "Playlist_Midnight",
+      "creation_date": "2026-02-17"
+    },
+    {
+      "id": 9,
+      "user_id": 4,
+      "playlist_name": "Playlist_Midnight",
+      "creation_date": "2026-06-22"
+    },
+    {
+      "id": 10,
+      "user_id": 1,
+      "playlist_name": "Playlist_Broken",
+      "creation_date": "2026-01-27"
+    },
+    {
+      "id": 11,
+      "user_id": 6,
+      "playlist_name": "Playlist_Wild",
+      "creation_date": "2026-04-23"
+    },
+    {
+      "id": 12,
+      "user_id": 8,
+      "playlist_name": "Playlist_Echo",
+      "creation_date": "2026-05-17"
+    },
+    {
+      "id": 13,
+      "user_id": 6,
+      "playlist_name": "Playlist_Wild",
+      "creation_date": "2026-05-26"
+    },
+    {
+      "id": 14,
+      "user_id": 9,
+      "playlist_name": "Playlist_Electric",
+      "creation_date": "2026-06-21"
+    },
+    {
+      "id": 15,
+      "user_id": 8,
+      "playlist_name": "Playlist_Storm",
+      "creation_date": "2026-08-23"
+    },
+    {
+      "id": 16,
+      "user_id": 9,
+      "playlist_name": "Playlist_Wild",
+      "creation_date": "2026-08-25"
+    },
+    {
+      "id": 17,
+      "user_id": 11,
+      "playlist_name": "Playlist_Lights",
+      "creation_date": "2026-03-20"
+    },
+    {
+      "id": 18,
+      "user_id": 2,
+      "playlist_name": "Playlist_Heart",
+      "creation_date": "2026-01-28"
+    },
+    {
+      "id": 19,
+      "user_id": 3,
+      "playlist_name": "Playlist_Sky",
+      "creation_date": "2026-07-18"
+    },
+    {
+      "id": 20,
+      "user_id": 12,
+      "playlist_name": "Playlist_Lonely",
+      "creation_date": "2026-08-28"
+    }
+  ],
+  "songs": [
+    {
+      "id": 1,
+      "song_name": "Fire Fire",
+      "duration": "3:45",
+      "artist": "Coldplay",
+      "music_genre": "Electronic"
+    },
+    {
+      "id": 2,
+      "song_name": "Wild Sky",
+      "duration": "4:43",
+      "artist": "Dua Lipa",
+      "music_genre": "Latin"
+    },
+    {
+      "id": 3,
+      "song_name": "Heart Golden",
+      "duration": "5:57",
+      "artist": "Adele",
+      "music_genre": "Electronic"
+    },
+    {
+      "id": 4,
+      "song_name": "Storm Lights",
+      "duration": "4:11",
+      "artist": "Kendrick Lamar",
+      "music_genre": "Pop"
+    },
+    {
+      "id": 5,
+      "song_name": "Electric Echo",
+      "duration": "2:56",
+      "artist": "Olivia Rodrigo",
+      "music_genre": "R&B"
+    },
+    {
+      "id": 6,
+      "song_name": "Electric Sky",
+      "duration": "5:50",
+      "artist": "Drake",
+      "music_genre": "Latin"
+    },
+    {
+      "id": 7,
+      "song_name": "Midnight Vibes",
+      "duration": "5:41",
+      "artist": "Taylor Swift",
+      "music_genre": "Indie"
+    },
+    {
+      "id": 8,
+      "song_name": "Storm Electric",
+      "duration": "5:35",
+      "artist": "Bruno Mars",
+      "music_genre": "Latin"
+    },
+    {
+      "id": 9,
+      "song_name": "Lights Dreams",
+      "duration": "5:48",
+      "artist": "Arctic Monkeys",
+      "music_genre": "Latin"
+    },
+    {
+      "id": 10,
+      "song_name": "Sky Fire",
+      "duration": "3:23",
+      "artist": "Drake",
+      "music_genre": "Electronic"
+    },
+    {
+      "id": 11,
+      "song_name": "Shadow Storm",
+      "duration": "2:28",
+      "artist": "Bad Bunny",
+      "music_genre": "Indie"
+    },
+    {
+      "id": 12,
+      "song_name": "Broken Echo",
+      "duration": "2:51",
+      "artist": "Kendrick Lamar",
+      "music_genre": "Rock"
+    },
+    {
+      "id": 13,
+      "song_name": "Echo Dreams",
+      "duration": "2:34",
+      "artist": "The Weeknd",
+      "music_genre": "R&B"
+    },
+    {
+      "id": 14,
+      "song_name": "Lonely Wild",
+      "duration": "5:39",
+      "artist": "Karol G",
+      "music_genre": "Rock"
+    },
+    {
+      "id": 15,
+      "song_name": "Wild Heart",
+      "duration": "3:36",
+      "artist": "Kendrick Lamar",
+      "music_genre": "Latin"
+    },
+    {
+      "id": 16,
+      "song_name": "Vibes Lights",
+      "duration": "2:10",
+      "artist": "Post Malone",
+      "music_genre": "Electronic"
+    },
+    {
+      "id": 17,
+      "song_name": "Broken Midnight",
+      "duration": "4:32",
+      "artist": "Karol G",
+      "music_genre": "Rock"
+    },
+    {
+      "id": 18,
+      "song_name": "Vibes Lights",
+      "duration": "4:40",
+      "artist": "Taylor Swift",
+      "music_genre": "Pop"
+    },
+    {
+      "id": 19,
+      "song_name": "Electric Lights",
+      "duration": "3:41",
+      "artist": "Adele",
+      "music_genre": "Hip Hop"
+    },
+    {
+      "id": 20,
+      "song_name": "Shadow Shadow",
+      "duration": "5:22",
+      "artist": "Karol G",
+      "music_genre": "Rock"
+    },
+    {
+      "id": 21,
+      "song_name": "Heart Vibes",
+      "duration": "5:19",
+      "artist": "Drake",
+      "music_genre": "Pop"
+    },
+    {
+      "id": 22,
+      "song_name": "Heart Storm",
+      "duration": "4:36",
+      "artist": "Adele",
+      "music_genre": "Hip Hop"
+    },
+    {
+      "id": 23,
+      "song_name": "Fire Vibes",
+      "duration": "4:11",
+      "artist": "Adele",
+      "music_genre": "Hip Hop"
+    },
+    {
+      "id": 24,
+      "song_name": "Lights Electric",
+      "duration": "2:44",
+      "artist": "Arctic Monkeys",
+      "music_genre": "Hip Hop"
+    },
+    {
+      "id": 25,
+      "song_name": "Golden Shadow",
+      "duration": "3:53",
+      "artist": "Karol G",
+      "music_genre": "Pop"
+    },
+    {
+      "id": 26,
+      "song_name": "Wild Broken",
+      "duration": "2:22",
+      "artist": "Kendrick Lamar",
+      "music_genre": "Latin"
+    },
+    {
+      "id": 27,
+      "song_name": "Echo Midnight",
+      "duration": "3:58",
+      "artist": "Arctic Monkeys",
+      "music_genre": "Rock"
+    },
+    {
+      "id": 28,
+      "song_name": "Echo Broken",
+      "duration": "2:15",
+      "artist": "Kendrick Lamar",
+      "music_genre": "R&B"
+    },
+    {
+      "id": 29,
+      "song_name": "Vibes Heart",
+      "duration": "4:19",
+      "artist": "Olivia Rodrigo",
+      "music_genre": "Hip Hop"
+    },
+    {
+      "id": 30,
+      "song_name": "Lonely Dreams",
+      "duration": "3:30",
+      "artist": "Arctic Monkeys",
+      "music_genre": "R&B"
+    }
+  ],
+  "playlist_songs": [
+    {
+      "playlist_id": 16,
+      "song_id": 1
+    },
+    {
+      "playlist_id": 10,
+      "song_id": 14
+    },
+    {
+      "playlist_id": 10,
+      "song_id": 4
+    },
+    {
+      "playlist_id": 10,
+      "song_id": 15
+    },
+    {
+      "playlist_id": 19,
+      "song_id": 30
+    },
+    {
+      "playlist_id": 14,
+      "song_id": 27
+    },
+    {
+      "playlist_id": 10,
+      "song_id": 20
+    },
+    {
+      "playlist_id": 13,
+      "song_id": 14
+    },
+    {
+      "playlist_id": 13,
+      "song_id": 30
+    },
+    {
+      "playlist_id": 3,
+      "song_id": 28
+    },
+    {
+      "playlist_id": 11,
+      "song_id": 11
+    },
+    {
+      "playlist_id": 15,
+      "song_id": 11
+    },
+    {
+      "playlist_id": 19,
+      "song_id": 4
+    },
+    {
+      "playlist_id": 9,
+      "song_id": 14
+    },
+    {
+      "playlist_id": 20,
+      "song_id": 29
+    },
+    {
+      "playlist_id": 15,
+      "song_id": 27
+    },
+    {
+      "playlist_id": 20,
+      "song_id": 8
+    },
+    {
+      "playlist_id": 10,
+      "song_id": 25
+    },
+    {
+      "playlist_id": 15,
+      "song_id": 23
+    },
+    {
+      "playlist_id": 16,
+      "song_id": 15
+    },
+    {
+      "playlist_id": 7,
+      "song_id": 19
+    },
+    {
+      "playlist_id": 17,
+      "song_id": 24
+    },
+    {
+      "playlist_id": 12,
+      "song_id": 24
+    },
+    {
+      "playlist_id": 11,
+      "song_id": 28
+    },
+    {
+      "playlist_id": 20,
+      "song_id": 19
+    },
+    {
+      "playlist_id": 14,
+      "song_id": 22
+    },
+    {
+      "playlist_id": 4,
+      "song_id": 24
+    },
+    {
+      "playlist_id": 12,
+      "song_id": 23
+    },
+    {
+      "playlist_id": 9,
+      "song_id": 10
+    },
+    {
+      "playlist_id": 6,
+      "song_id": 13
+    },
+    {
+      "playlist_id": 8,
+      "song_id": 9
+    },
+    {
+      "playlist_id": 9,
+      "song_id": 13
+    },
+    {
+      "playlist_id": 7,
+      "song_id": 20
+    },
+    {
+      "playlist_id": 1,
+      "song_id": 3
+    },
+    {
+      "playlist_id": 12,
+      "song_id": 4
+    },
+    {
+      "playlist_id": 4,
+      "song_id": 30
+    },
+    {
+      "playlist_id": 8,
+      "song_id": 3
+    },
+    {
+      "playlist_id": 17,
+      "song_id": 12
+    },
+    {
+      "playlist_id": 13,
+      "song_id": 27
+    },
+    {
+      "playlist_id": 10,
+      "song_id": 14
+    }
+  ]
+}

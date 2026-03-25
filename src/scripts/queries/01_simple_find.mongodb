@@ -1,0 +1,62 @@
+﻿use("musicDB")
+
+// =======================
+// USERS
+// =======================
+
+// 1. Ver todos los usuarios
+db.users.find()
+
+// 2. Usuarios mayores de 30
+db.users.find({ age: { $gt: 30 } })
+
+// 3. Usuarios entre 25 y 30 años
+db.users.find({ age: { $gte: 25, $lte: 30 } })
+
+// 4. Buscar usuario con id específico
+db.users.findOne({ id: 5 })
+
+// 5. Buscar usuario por nombre
+db.users.find({ name: "User1" })
+
+// 6. Mostrar solo nombre y email (proyección)
+db.users.find({}, { name: 1, email: 1, _id: 0 })
+
+// =======================
+// SONGS
+// =======================
+
+// 7. Ver todas las canciones
+db.songs.find()
+
+// 8. Canciones del género Rock
+db.songs.find({ music_genre: "Rock" })
+
+// 9. Canciones de un artista específico
+db.songs.find({ artist: "Drake" })
+
+// 10. Mostrar solo nombre de canción y artista
+db.songs.find({}, { song_name: 1, artist: 1, _id: 0 })
+
+// =======================
+// PLAYLISTS
+// =======================
+
+// 11. Ver todas las playlists
+db.playlists.find()
+
+// 12. Playlists de un usuario específico
+db.playlists.find({ user_id: 1 })
+
+// 13. Mostrar nombre de playlist y fecha
+db.playlists.find({}, { playlist_name: 1, creation_date: 1, _id: 0 })
+
+// =======================
+// PLAYLIST_SONGS
+// =======================
+
+// 14. Canciones de una playlist específica
+db.playlist_songs.find({ playlist_id: 1 })
+
+// 15. Ver en qué playlists aparece una canción
+db.playlist_songs.find({ song_id: 2 })

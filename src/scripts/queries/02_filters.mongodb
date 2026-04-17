@@ -1,0 +1,74 @@
+use ("musicDB")
+
+// =======================
+// USERS
+// =======================
+
+//1.  Ver usuarios que tenga id mayor a 5 y edad menor a 30
+db.users.find({
+   id: { $gt:5 }
+   age: { $lt: 30 }
+})
+
+//2. Ver usuarios que tenga id mayor o igual a 15
+db.users.find({
+   id: { $gte: 15 }
+})
+
+//3. ver usuarios que tenga id menor o igual a 20
+db.users.find({
+   id: { $lte: 20 }
+})
+
+// =======================
+// Songs
+// =======================
+
+//4. Ver canciones que esten entre mayor que 15 y menor que 20
+db.songs.find({
+   id: { $gt: 15, $lt: 20 }
+})
+
+//5. Ver canciones que tenga id mayor o igual a 15
+db.songs.find({
+   id: {$gte: 15}
+})
+
+//6. Ver canciones que tenga id menor o igual a 15
+db.songs.find({
+   id: {$lte: 15}
+})
+
+//7. Ver canciones diferentes al genero electronica
+db.songs.find({
+   music_genre: {$ne: "Electronic"}
+})
+
+//8. Ver un alista de canciones del genero electronica y pop
+db.songs.find({
+   music_genre: {$in: ["Electronic","Pop"]}
+})
+
+// =======================
+// PLAYLISTS
+// =======================
+
+//9. Ver playlists que tenga de id que sea mayor que 1 y menor que 10
+db.playlists.find({
+   id: {$gt: 1, $lt: 10}
+})
+
+//10. Ver playlist con el user_id  que sea mayor que 10 y menor que 15
+db.playlists.find({
+   user_id: {$gt:10,$lt:15}
+})
+
+// =======================
+// PLAYLIST_SONGS
+// =======================
+
+//11. Ver playlist con id mayor a 15 y canciones con id menor que 10
+db.playlist_songs.find({
+   playlist_id: {$gt:15}
+   song_id: {$lt:10}
+})

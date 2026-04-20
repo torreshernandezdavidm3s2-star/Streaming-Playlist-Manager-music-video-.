@@ -5,7 +5,8 @@ Por qué NoSQL: Una playlist es un documento que contiene una lista de objetos (
 ### Integrantes del equipo 
 |Rol|Nombre completo|
 |---|--|
-|The Data Modeler|Torres Hernández David|
+|The Data Modeler|Rueda Jaime Maria Argel|
 |The Query Developer|López Torres Erick de Jesus|
-|The Integration Specialist|Florencio Severiano Jorge|
-|The Data Seeder / QA|Peralta Trujillo Oliver|
+|The Integration Specialist|Peralta Trujillo Oliver|
+|The Data Seeder / QA|Torres Hernández David|
+|The Scrum Master|Florencio Severiano Jorge|

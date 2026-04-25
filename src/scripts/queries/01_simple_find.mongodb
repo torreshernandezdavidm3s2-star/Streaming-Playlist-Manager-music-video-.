@@ -1,4 +1,4 @@
-﻿use("musicDB")
+use("musicDB")
 
 // =======================
 // USERS
@@ -60,3 +60,32 @@ db.playlist_songs.find({ playlist_id: 1 })
 
 // 15. Ver en qué playlists aparece una canción
 db.playlist_songs.find({ song_id: 2 })
+
+// =======================
+// RECOMEDATION
+// =======================
+
+//16. Ver todas las recomendaciones
+db.recomedation.find()
+
+//17.Ver solo un id de recomendaciones
+db.recomedation.find({user_id: 15})
+
+//18.Ver solo recomendaciones con tipo personalizada.
+db.recomedation.find({tipo: "Personalizada"})
+
+// =======================
+// HISTORY
+// =======================
+
+//19.Ver todas las historias.
+db.history.find()
+
+//19.Ver solo una historia.
+db.history.find({user_id: 4})
+
+//20.Ver solo un historial por el id de las canciones.
+db.history.find({song_id: 15}).
+
+//21.Ver solo reproducciones de 5
+db.history.find({reproducciones: 5}).

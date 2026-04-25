@@ -1,0 +1,153 @@
+use ("musicDB")
+
+// =======================
+// USERS
+// =======================
+
+//1.Ver solo usuarios mayores a 20 años y que les guste el rock.
+db.users.find({
+  $and:[
+    {edad: {$gt: 20} },
+    {"perfil_musical.generos_favoritos": "Rock"}
+  ]
+})
+
+//2.Ver solo usuarios que sean menores que 25 años y que sean del genero masculino.
+db.users.find({
+  $and: [
+    {edad: {$lt: 25}},
+    {genero: "Masculino"}
+  ]
+})
+
+//3.Ver solo usuarios menores de edad(18) o del genero femenino.
+db.users.find({
+  $or: [
+    {edad: {$lt: 18}},
+    {genero: "Femenino"}
+  ]
+})
+
+//4.Ver usuarios que no son de 20 años.
+db.users.find({
+  edad: {$not: {$gt: 20}}
+})
+
+//5.Ver usuarios que sean de genero femenino y que no sean menor o igual a 22 o que en su perfil les guste el Rock.
+db.users.find({
+  $or: [
+    {
+      $and: [
+        { genero: "Femenino" },
+        { edad: { $not: { $lte: 22 } } }
+      ]
+    },
+    {
+      "perfil_musical.generos_favoritos": "Rock"
+    }
+  ]
+})
+
+// =======================
+// SONGS
+// =======================
+
+//6.Ver canciones con duración mayor a 200 y que sean del genero Pop.
+db.songs.find({
+  $and:[
+    {duracion: {$gt: 200}},
+    {genero_musical: "Pop"}
+  ]
+})
+
+//7.Ver canciones que sean de duración menor a 190 o que sean de Rock.
+db.songs.find({
+  $or: [
+    {duracion: {$lt: 190}},
+    {genero_musical: "Rock"}
+  ]
+})
+
+//7.Ver canciones que la duración sea mayor o igual a 250 o que me muestre una lista de los géneros Rock y Pop.
+db.songs.find({
+  $or:[
+    {
+      $and:[
+        {duracion: {$gte: 250}}
+      ]
+    },
+    {
+      genero_musical: {$in: ["Rock", "Pop"]}
+    }
+  ]
+})
+
+// =======================
+// PLAYLISTS
+// =======================
+
+//8.Ver playlists que tenga id mayor a 10 y user_id menor a 20.
+db.playlists.find({
+  $and: [
+    {_id: {$gt: 15}},
+    {user_id: {$lt: 20}}
+  ]
+})
+
+// =======================
+// PLAYLIST_SONGS
+// =======================
+
+//9.Ver playlists que contenga el id  mayor a 15 y menor a 25.
+db.playlist_songs.find({
+  $and: [
+    {playlist_id: {$gt: 15}},
+    {song_id: {$lt: 25}}
+  ]
+})
+
+// =======================
+// RECOMEDATION
+// =======================
+
+//10.Ver recomendaciones que tienen como id mayor a 20 y canciones 1 menor a 40
+db.recomedation.find({
+  $and: [
+    {user_id: {$gt: 20}},
+    {"canciones.1": {$lt: 40}}
+  ]
+})
+
+//11.Ver recomendaciones que tenga id mayor o igual a 25 o canciones tenga menor o igual 20
+db.recomedation.find({
+  $or: [
+    {
+      $and:[
+        {user_id: {$gte:25}}
+      ]
+    },
+    {
+      "canciones.2": {$lte: 20}
+    }
+  ]
+})
+
+// =======================
+// HISTORY
+// =======================
+
+//12.Ver historial de usuarios id mayor a 10 y canciones menor a 15
+db.history.find({
+  $and:[
+    {user_id: {$gt: 10}},
+    {song_id: {$lt: 15}}
+  ]
+})
+
+//13.Ver historial de usuario de id mayor o igual a 15 o reproducciones menor o igual a 3
+db.history.find({
+  $or: [
+    {user_id: {$gte: 15}},
+    {reproducciones: {$lte: 3}}
+  ]
+}).

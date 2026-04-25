@@ -72,3 +72,37 @@ db.playlist_songs.find({
    playlist_id: {$gt:15}
    song_id: {$lt:10}
 })
+
+// =======================
+// RECOMEDATION
+// =======================
+
+//12.Ver recomendaciones mayor o igual a 10.
+db.recomedation.find({
+user_id: {$gte: 10}  
+})
+
+//13.Ver recomendaciones menor o igual a 30.
+db.recomedation.find({
+  user_id: {$lte: 30}
+})
+
+// =======================
+// HISTORY
+// =======================
+
+//14.Ver solo un historial de mayor a 10 y menor 30
+db.history.find({
+  user_id: {$gt: 10},
+  song_id: {$lt: 30}
+})
+
+//15.Ver lista de reproducciones del 5 y el 3
+db.history.find({
+  reproducciones: {$in: [5,3]}
+})
+
+//16.Ver reproducciones diferentes a 5.
+db.history.find({
+  reproducciones: {$ne: 5}
+}).

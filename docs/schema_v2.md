@@ -1,76 +1,106 @@
-# Esquema MongoDB Avanzado 🎵
+# Esquema MongoDB Avanzado 🎵 (Versión Ultra Ordenada)
 
-## COLECCIONES BASE
+```mermaid
+erDiagram
+
+%% =========================================
+%% 🔹 NODO PRINCIPAL
+%% =========================================
 
 USUARIO {
-  _id: ObjectId (PK)
-  nombre: string
-  username: string
-  edad: int
-  correo: string
-  genero: string
+  ObjectId _id PK
+  string nombre
+  string username
+  int edad
+  string correo
+  string genero
 }
 
-PLAYLIST {
-  _id: ObjectId (PK)
-  nombre: string
-  fecha_creacion: date
-  usuario_id: ObjectId (FK -> USUARIO._id)
-}
+%% =========================================
+%% 🔹 CONTENIDO
+%% =========================================
 
 CANCION {
-  _id: ObjectId (PK)
-  nombre: string
-  duracion: int
-  artista: string
-  genero: string
+  ObjectId _id PK
+  string nombre
+  int duracion
+  string artista
+  string genero
 }
 
-## RELACIONES
+%% =========================================
+%% 🔹 CREACIÓN (SIN CRUCES)
+%% =========================================
 
-USUARIO ||--o{ PLAYLIST : crea
-PLAYLIST ||--o{ CANCION : contiene
+PLAYLIST {
+  ObjectId _id PK
+  string nombre
+  date fecha_creacion
+  ObjectId usuario_id FK
+}
 
-----------------------------------
+PLAYLIST_CANCION {
+  ObjectId _id PK
+  ObjectId playlist_id FK
+  ObjectId cancion_id FK
+}
 
-## MEJORA 1: PERFIL MUSICAL (IA)
+%% =========================================
+%% 🔹 PERFIL
+%% =========================================
 
 PERFIL_MUSICAL {
-  _id: ObjectId (PK)
-  usuario_id: ObjectId (FK -> USUARIO._id)
-  generos_favoritos: [string]
-  artistas_favoritos: [string]
-  nivel_actividad: float
+  ObjectId _id PK
+  ObjectId usuario_id FK
+  string generos_favoritos
+  string artistas_favoritos
+  float nivel_actividad
 }
+
+%% =========================================
+%% 🔹 INTERACCIONES (SEPARADAS)
+%% =========================================
+
+RECOMENDACION {
+  ObjectId _id PK
+  ObjectId usuario_id FK
+  string algoritmo
+  string tipo
+}
+
+RECOMENDACION_CANCION {
+  ObjectId _id PK
+  ObjectId recomendacion_id FK
+  ObjectId cancion_id FK
+}
+
+HISTORIAL {
+  ObjectId _id PK
+  ObjectId usuario_id FK
+  date fecha
+  int reproducciones
+}
+
+HISTORIAL_CANCION {
+  ObjectId _id PK
+  ObjectId historial_id FK
+  ObjectId cancion_id FK
+}
+
+%% =========================================
+%% 🔹 RELACIONES (ULTRA LIMPIAS)
+%% =========================================
+
+USUARIO ||--o{ PLAYLIST : crea
+PLAYLIST ||--o{ PLAYLIST_CANCION : contiene
+PLAYLIST_CANCION }o--|| CANCION : incluye
 
 USUARIO ||--|| PERFIL_MUSICAL : tiene
 
-----------------------------------
-
-## MEJORA 2: RECOMENDACIONES
-
-RECOMENDACION {
-  _id: ObjectId (PK)
-  usuario_id: ObjectId (FK -> USUARIO._id)
-  cancion_id: ObjectId (FK -> CANCION._id)
-  algoritmo: string
-  tipo: string
-}
-
 USUARIO ||--o{ RECOMENDACION : recibe
-RECOMENDACION ||--o{ CANCION : sugiere
+RECOMENDACION ||--o{ RECOMENDACION_CANCION : genera
+RECOMENDACION_CANCION }o--|| CANCION : sugiere
 
-----------------------------------
-
-## MEJORA 3: HISTORIAL
-
-HISTORIAL {
-  _id: ObjectId (PK)
-  usuario_id: ObjectId (FK -> USUARIO._id)
-  cancion_id: ObjectId (FK -> CANCION._id)
-  fecha: date
-  reproducciones: int
-}
-
-USUARIO ||--o{ HISTORIAL : escucha
-CANCION ||--o{ HISTORIAL : aparece
+USUARIO ||--o{ HISTORIAL : registra
+HISTORIAL ||--o{ HISTORIAL_CANCION : guarda
+HISTORIAL_CANCION }o--|| CANCION : reproduce

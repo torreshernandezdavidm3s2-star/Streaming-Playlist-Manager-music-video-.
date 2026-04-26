@@ -1,69 +1,76 @@
 # Esquema MongoDB Avanzado 🎵
 
-Sistema de streaming musical con funciones tipo Spotify / YouTube Music
+## COLECCIONES BASE
 
-```mermaid
-erDiagram
-
-%% =========================
-%% COLECCIONES BASE (DEL COMPAÑERO)
-%% =========================
-
-USER {
-    string nombre
-    string username
-    int edad
-    string correo
-    string genero
+USUARIO {
+  _id: ObjectId (PK)
+  nombre: string
+  username: string
+  edad: int
+  correo: string
+  genero: string
 }
 
 PLAYLIST {
-    string nombre
-    date fecha_creacion
+  _id: ObjectId (PK)
+  nombre: string
+  fecha_creacion: date
+  usuario_id: ObjectId (FK -> USUARIO._id)
 }
 
-SONG {
-    string nombre_cancion
-    int duracion
-    string artista
-    string genero_musical
+CANCION {
+  _id: ObjectId (PK)
+  nombre: string
+  duracion: int
+  artista: string
+  genero: string
 }
 
-USER ||--o{ PLAYLIST : crea
-PLAYLIST ||--o{ SONG : contiene
+## RELACIONES
 
-%% =========================
-%% MEJORA 1: PERFIL MUSICAL (IA)
-%% =========================
+USUARIO ||--o{ PLAYLIST : crea
+PLAYLIST ||--o{ CANCION : contiene
+
+----------------------------------
+
+## MEJORA 1: PERFIL MUSICAL (IA)
 
 PERFIL_MUSICAL {
-    string generos_favoritos
-    string artistas_favoritos
-    float nivel_actividad
+  _id: ObjectId (PK)
+  usuario_id: ObjectId (FK -> USUARIO._id)
+  generos_favoritos: [string]
+  artistas_favoritos: [string]
+  nivel_actividad: float
 }
 
-USER ||--|| PERFIL_MUSICAL : tiene
+USUARIO ||--|| PERFIL_MUSICAL : tiene
 
-%% =========================
-%% MEJORA 2: RECOMENDACIONES INTELIGENTES
-%% =========================
+----------------------------------
+
+## MEJORA 2: RECOMENDACIONES
 
 RECOMENDACION {
-    string algoritmo
-    string tipo
+  _id: ObjectId (PK)
+  usuario_id: ObjectId (FK -> USUARIO._id)
+  cancion_id: ObjectId (FK -> CANCION._id)
+  algoritmo: string
+  tipo: string
 }
 
-USER ||--o{ RECOMENDACION : recibe
-RECOMENDACION ||--o{ SONG : sugiere
+USUARIO ||--o{ RECOMENDACION : recibe
+RECOMENDACION ||--o{ CANCION : sugiere
 
-%% =========================
-%% MEJORA 3: HISTORIAL Y MÉTRICAS
-%% =========================
+----------------------------------
+
+## MEJORA 3: HISTORIAL
 
 HISTORIAL {
-    date fecha
-    int reproducciones
+  _id: ObjectId (PK)
+  usuario_id: ObjectId (FK -> USUARIO._id)
+  cancion_id: ObjectId (FK -> CANCION._id)
+  fecha: date
+  reproducciones: int
 }
 
-USER ||--o{ HISTORIAL : escucha
-SONG ||--o{ HISTORIAL : aparece
+USUARIO ||--o{ HISTORIAL : escucha
+CANCION ||--o{ HISTORIAL : aparece

@@ -1,4 +1,4 @@
-# Esquema MongoDB Avanzado 🎵 (Versión Ultra Ordenada)
+# Esquema MongoDB Avanzado 🎵
 
 ```mermaid
 erDiagram

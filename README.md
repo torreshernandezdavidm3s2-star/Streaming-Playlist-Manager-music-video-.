@@ -24,7 +24,7 @@
   <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge">
 </p>
 
-<!-- 🎵 GIF -->
+<!-- 🎵 MAIN GIF -->
 <p align="center">
   <img src="https://i.pinimg.com/originals/19/34/af/1934afbf267c2334a1e7f7509d212f62.gif" width="650"/>
 </p>
@@ -33,11 +33,15 @@
 
 # 🎯 Project Title
 
+<p align="center">
+  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="500"/>
+</p>
+
 ## Music Streaming Player
 
 A modern music streaming and playlist management application designed to provide users with a clean, fast, and interactive multimedia experience.
 
-Features include:
+### ✨ Features
 
 - 🎵 Music playback  
 - 📂 Playlist management  
@@ -50,18 +54,27 @@ Features include:
 
 # 📚 Table of Contents
 
+<p align="center">
+  <img src="https://media.giphy.com/media/l0HlNaQ6gWfllcjDO/giphy.gif" width="450"/>
+</p>
+
 - [Project Title](#-project-title)
 - [Getting Started](#-getting-started)
   - [Prerequisites](#-prerequisites)
   - [Installation](#️-installation)
 - [Usage Examples](#-usage-examples)
 - [Architecture](#️-architecture)
+- [Tech Stack](#-tech-stack)
 - [Running Tests](#-running-tests)
 - [Contributing](#-contributing)
 
 ---
 
 # 🚀 Getting Started
+
+<p align="center">
+  <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="500"/>
+</p>
 
 Welcome to the **Music Streaming Player** project.
 
@@ -70,6 +83,10 @@ This project was created to simulate a modern streaming platform where users can
 ---
 
 ## 📋 Prerequisites
+
+<p align="center">
+  <img src="https://media.giphy.com/media/L8K62iTDkzGX6/giphy.gif" width="350"/>
+</p>
 
 Before running the project, install the following tools:
 
@@ -81,6 +98,10 @@ Before running the project, install the following tools:
 ---
 
 # ⚙️ Installation
+
+<p align="center">
+  <img src="https://media.giphy.com/media/kH1DBkPNyZPOk0BxrM/giphy.gif" width="450"/>
+</p>
 
 ## 1️⃣ Clone the Repository
 
@@ -123,6 +144,10 @@ http://localhost:3000
 ---
 
 # 🎧 Usage Examples
+
+<p align="center">
+  <img src="https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif" width="500"/>
+</p>
 
 ## ▶️ Play Music
 
@@ -167,6 +192,10 @@ playlist.splice(index, 1);
 
 # 🗂️ Architecture
 
+<p align="center">
+  <img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="450"/>
+</p>
+
 ```mermaid
 graph TD
 A[👤 User] --> B[🎧 Music Player]
@@ -205,6 +234,10 @@ Music-Streaming-Player/
 # 🛠️ Tech Stack
 
 <p align="center">
+  <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="450"/>
+</p>
+
+<p align="center">
   <img src="https://skillicons.dev/icons?i=js,nodejs,html,css,github,vscode&theme=dark" />
 </p>
 
@@ -220,6 +253,10 @@ Music-Streaming-Player/
 ---
 
 # 🧪 Running Tests
+
+<p align="center">
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="450"/>
+</p>
 
 Run the following command to execute tests:
 
@@ -242,6 +279,10 @@ npm test
 
 # 👥 Team Members
 
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7TKsQ8UQ8QJzJ6Ra/giphy.gif" width="400"/>
+</p>
+
 | Role | Full Name |
 |---|---|
 | The Data Modeler | Rueda Jaime Maria Argel |
@@ -253,6 +294,10 @@ npm test
 ---
 
 # 🤝 Contributing
+
+<p align="center">
+  <img src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="450"/>
+</p>
 
 Contributions are welcome!
 

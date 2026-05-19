@@ -2,7 +2,7 @@
   "project": {
     "name": "Music Streaming Platform",
     "version": "1.0.0",
-    "description": "The main objective of the platform is to allow users to upload and play music in a simple and intuitive way. The system also enables users to create personalized accounts, manage their music libraries, and build custom playlists based on their preferences.In addition, playlists and songs can be organized and easily located through an efficient search system within the application, allowing quick access to desired content Overall, the platform aims to deliver a dynamic, personalized, and accessible experience for managing and playing digital music."
+    "description": "The main objective of the platform is to allow users to upload and play music in a simple and intuitive way. The system also enables users to create personalized accounts, manage their music libraries, and build custom playlists based on their preferences. In addition, playlists and songs can be organized and easily located through an efficient search system within the application, allowing quick access to desired content. Overall, the platform aims to deliver a dynamic, personalized, and accessible experience for managing and playing digital music."
   },
   "epics": [
     {
@@ -33,7 +33,7 @@
       "description": "Create and manage custom playlists.",
       "goals": [
         "Create playlists",
-        "Add/remove songs",
+        "Add or remove songs",
         "Organize music collections"
       ],
       "user_stories": []
@@ -144,7 +144,7 @@
                 "No internet connection"
               ],
               "when": ["User plays a song"],
-              "then": ["Music plays successfully"]
+              "then": ["Music plays correctly"]
             }
           ]
         }
@@ -153,7 +153,7 @@
     {
       "id": "EPIC-06",
       "title": "Social Sharing Features",
-      "description": "Share music and playlists with other users.",
+      "description": "Share songs and playlists with other users.",
       "goals": [
         "Generate shareable links",
         "Social media integration",
@@ -222,5 +222,6 @@
     }
   ]
 }
+
 
 

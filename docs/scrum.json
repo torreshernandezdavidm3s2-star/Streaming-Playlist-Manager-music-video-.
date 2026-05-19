@@ -2,7 +2,7 @@
   "project": {
     "name": "Music Streaming Platform",
     "version": "1.0.0",
-    "description": "A platform for uploading, streaming, organizing, and sharing music with personalized user experiences."
+    "description": "The main objective of the platform is to allow users to upload and play music in a simple and intuitive way. The system also enables users to create personalized accounts, manage their music libraries, and build custom playlists based on their preferences.In addition, playlists and songs can be organized and easily located through an efficient search system within the application, allowing quick access to desired content Overall, the platform aims to deliver a dynamic, personalized, and accessible experience for managing and playing digital music."
   },
   "epics": [
     {

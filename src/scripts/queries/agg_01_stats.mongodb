@@ -1,0 +1,71 @@
+use("musicDB")
+
+//1.-Ver el historial de un usuario en especifico.
+db.historial.aggregate([
+  { $match: { user_id: 46 } }
+])
+
+//2.-Ver el historial de una cancion en especifico.
+db.historial.aggregate([
+  { $match: { song_id: 13 } }
+])
+
+//3.-Ver repoducciones mayor a 5.
+db.historial.aggregate([
+  { $match: { reproducciones: { $gt: 5 } } }
+])
+
+//4.-Total canciones.
+db.songs.aggregate([
+  { $count: "total_canciones" }
+])
+
+//5.-Total de usuarios
+db.users.aggregate([
+  { $count: "total_usuarios" }
+])
+
+//6.-Total del historial.
+db.historial.aggregate([
+  { $count: "total_historial" }
+])
+
+//7.-Canciones	escuchadas por usuario
+db.historial.aggregate([
+  {
+    $group: {
+      _id: "$user_id",
+      canciones: { $sum: 1 }
+    }
+  }
+])
+
+//8.-Reproducciones por cancion
+db.historial.aggregate([
+  {
+    $group: {
+      _id: "$song_id",
+      total: { $sum: "$reproducciones" }
+    }
+  }
+])
+
+//9.-Reproducciones por usuario
+db.historial.aggregate([
+  {
+    $group: {
+      _id: "$user_id",
+      total: { $sum: "$reproducciones" }
+    }
+  }
+])
+
+//10.-Total general de reproducciones
+db.historial.aggregate([
+  {
+    $group: {
+      _id: null,
+      total_general: { $sum: "$reproducciones" }
+    }
+  }
+])

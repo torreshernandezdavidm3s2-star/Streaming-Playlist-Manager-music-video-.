@@ -62,6 +62,40 @@ Overall, the platform aims to deliver a dynamic, personalized, and accessible ex
 
 ---
 
+## 📥 EPIC-05 — Offline Listening
+
+**Description:** Download music for offline playback.
+
+**Goals:**
+- Download songs
+- Offline playback support
+- Storage management
+
+---
+
+
+## 🔗 EPIC-06 — Social Sharing Features
+
+**Description:** Share songs and playlists with other users.
+
+**Goals:**
+- Generate shareable links
+- Social media integration
+- Cross-platform sharing
+  
+---
+
+## 🎨 EPIC-07 — User Experience and Interface Design
+
+**Description:** Modern and responsive UI/UX design.
+
+**Goals:**
+- Responsive interface
+- Consistent design system
+- Easy navigation
+
+---
+
 ### 🧪 User Story: Search Music by Different Criteria
 
 **As a:** User  
@@ -92,19 +126,8 @@ Overall, the platform aims to deliver a dynamic, personalized, and accessible ex
 - When the user applies a genre filter  
 - Then only songs of the selected genre are shown  
 
----
-
-## 📥 EPIC-05 — Offline Listening
-
-**Description:** Download music for offline playback.
-
-**Goals:**
-- Download songs
-- Offline playback support
-- Storage management
 
 ---
-
 ### 🧪 User Story: Download Music for Offline Use
 
 **As a:** User  
@@ -133,17 +156,6 @@ Overall, the platform aims to deliver a dynamic, personalized, and accessible ex
 
 ---
 
-## 🔗 EPIC-06 — Social Sharing Features
-
-**Description:** Share songs and playlists with other users.
-
-**Goals:**
-- Generate shareable links
-- Social media integration
-- Cross-platform sharing
-
----
-
 ### 🧪 User Story: Share Music Content
 
 **As a:** User  
@@ -163,16 +175,6 @@ Overall, the platform aims to deliver a dynamic, personalized, and accessible ex
 - When share is clicked  
 - Then a shareable link is generated  
 
----
-
-## 🎨 EPIC-07 — User Experience and Interface Design
-
-**Description:** Modern and responsive UI/UX design.
-
-**Goals:**
-- Responsive interface
-- Consistent design system
-- Easy navigation
 
 ---
 
@@ -182,18 +184,6 @@ Overall, the platform aims to deliver a dynamic, personalized, and accessible ex
 **I want:** A clean and intuitive interface  
 **So that:** I can use the app easily  
 
-#### ✅ Acceptance Criteria
-- Interface is responsive
-- Navigation is intuitive
-- Consistent design system
-- Core actions require minimal steps
-- Optimized for mobile and desktop
-
-#### 🔍 Scenario
-
-- Given the user opens the app  
-- When they navigate through sections  
-- Then they find features easily  
 
 
 

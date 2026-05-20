@@ -1,5 +1,5 @@
 
-# 🎵 
+# 🎧 Music Streaming Player 🎶
 
 ## 📌 Project Overview
 

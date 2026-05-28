@@ -1,0 +1,269 @@
+use ("musicDB")
+
+// Ver todos los usuarios
+1.- db.users.find()
+
+// Mostrar solo el nombre ye el correo
+2.- db.users.aggregate([
+  {
+    $project: {
+      _id: 0,
+      nombre: 1,
+      correo: 1
+    }
+  }
+])
+
+// Cambiar nombre de los campos
+3.- db.users.aggregate([
+  {
+    $project: {
+      _id: 0,
+      usuario: "$nombre",
+      email: "$correo"
+    }
+  }
+])
+
+// Ordenar de la A-Z
+4.- db.users.aggregate([
+  {
+    $sort: {
+      nombre: 1
+    }
+  }
+])
+
+// Ordenar de la Z-A
+5.- db.users.aggregate([
+  {
+    $sort: {
+      nombre: -1
+    }
+  }
+])
+
+//Ver los ultimos usuarios agregados
+6.- db.users.aggregate([
+  {
+    $sort: {
+      created_at: -1
+    }
+  }
+])
+
+//Mostrar solo 5 usuarios
+7.- db.users.aggregate([
+  {
+    $limit: 5
+  }
+])
+
+//Ordenar y limpiar 
+8.- db.users.aggregate([
+  {
+    $sort: {
+      nombre: 1
+    }
+  },
+
+  {
+    $limit: 10
+  }
+])
+
+//Contar canciones
+9.- db.songs.aggregate([
+  {
+    $count: "total_songs"
+  }
+])
+
+//Agrupar canciones por artista 
+10.- db.songs.aggregate([
+
+  {
+    $group: {
+      _id: "$artist",
+      total: {
+        $sum: 1
+      }
+    }
+  }
+
+])
+
+//Top de artistas con mas canciones
+11.- db.songs.aggregate([
+
+  {
+    $group: {
+      _id: "$artist",
+      total: {
+        $sum: 1
+      }
+    }
+  },
+
+  {
+    $sort: {
+      total: -1
+    }
+  },
+
+  {
+    $limit: 5
+  }
+
+])
+
+//Pipeline
+12.- db.playlists.aggregate([
+
+  {
+    $lookup: {
+      from: "songs",
+      localField: "song_id",
+      foreignField: "_id",
+      as: "song"
+    }
+  }
+
+])
+
+//Reporte de playlist + cancion 
+13.- db.playlists.aggregate([
+
+  {
+    $lookup: {
+      from: "songs",
+      localField: "song_id",
+      foreignField: "_id",
+      as: "song"
+    }
+  },
+
+  {
+    $project: {
+      _id: 0,
+      playlist: "$name",
+
+      cancion: {
+        $arrayElemAt: ["$song.title", 0]
+      },
+
+      artista: {
+        $arrayElemAt: ["$song.artist", 0]
+      }
+    }
+  }
+
+])
+
+//JOINS con songs
+14.- db.history.aggregate([
+
+  {
+    $lookup: {
+      from: "songs",
+      localField: "song_id",
+      foreignField: "_id",
+      as: "song"
+    }
+  }
+
+])
+
+//Canciones mas reproducidas
+15.- db.history.aggregate([
+
+  {
+    $group: {
+      _id: "$song_id",
+      reproducciones: {
+        $sum: 1
+      }
+    }
+  },
+
+  {
+    $sort: {
+      reproducciones: -1
+    }
+  },
+
+  {
+    $limit: 10
+  }
+
+])
+
+//Reporte completo de las reproducciones
+16.- db.history.aggregate([
+
+  {
+    $group: {
+      _id: "$song_id",
+      reproducciones: {
+        $sum: 1
+      }
+    }
+  },
+
+  {
+    $lookup: {
+      from: "songs",
+      localField: "_id",
+      foreignField: "_id",
+      as: "song"
+    }
+  },
+
+  {
+    $project: {
+      _id: 0,
+
+      cancion: {
+        $arrayElemAt: ["$song.title", 0]
+      },
+
+      artista: {
+        $arrayElemAt: ["$song.artist", 0]
+      },
+
+      reproducciones: 1
+    }
+  },
+
+  {
+    $sort: {
+      reproducciones: -1
+    }
+  }
+
+])
+
+//Buscar playlist por usuario 
+17.- db.playlists.aggregate([
+  {
+    $match: {
+      user_id: 1
+    }
+  }
+])
+
+//JOINS de users + playlist
+18.- db.playlists.aggregate([
+
+  {
+    $lookup: {
+      from: "users",
+      localField: "user_id",
+      foreignField: "_id",
+      as: "user"
+    }
+  }
+
+])
+
+//

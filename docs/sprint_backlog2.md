@@ -36,6 +36,131 @@ These user stories represent the transformation of an isolated playback utility 
   * *Mitigation:* Apply transaction-specific indexed sequencing or spaced integer tracking in the database layer (`TSK-05.2`).
 
 ---
+## User histories
+
+### 📑 Story 2: Offline Mode (Local Storage & Playback)
+
+* **As a** premium user  
+
+* **I want to** download individual tracks and full playlists directly to my device  
+
+* **So that I can** enjoy uninterrupted music playback when I have no internet access (e.g., on airplanes or subways)  
+
+
+
+#### 📝 Description & Context
+
+This feature requires secure local data caching. Downloaded audio files must be encrypted to prevent piracy and managed efficiently to avoid running out of device storage.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- Downloads are exclusive to Premium tier users.
+
+- Audio files must be stored in a secure, hidden application directory.
+
+- The app must check for an active internet connection; if absent, it should seamlessly switch to local-only playback without crashing.
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Download Trigger:** A clear "Download" toggle or icon (e.g., a downward arrow) must be present on song rows, album views, and playlist headers.
+
+- [ ] **Visual Indicators:** - Show a spinning loader/progress bar during active downloads.
+
+  - Display a permanent green checkmark or unique badge next to the song title once fully downloaded.
+
+- [ ] **Offline Library View:** A dedicated "Downloads" tab must be accessible from the navigation menu, showcasing only locally available content.
+
+- [ ] **Connection Loss Resilience:** If the network drops mid-song, the player must automatically queue the next available downloaded song if the current one isn't cached.
+
+
+
+---
+
+
+
+---
+
+
+
+### 📑 Story 5: Social Sharing & Link Generation
+
+* **As a** user  
+
+* **I want to** generate universal web links for songs or playlists and share them via native mobile options  
+
+* **So that I can** share music discoveries with friends across different platforms  
+
+
+
+#### 📝 Description & Context
+
+This feature utilizes the device's native sharing sheet to provide a seamless cross-platform experience. Clicking the link outside the app should route the receiver properly.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- Links must be formatted as deep links (e.g., `https://musicapp.com/track/id`). If the recipient has the app installed, it opens directly; if not, it redirects to a web preview page.
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Contextual Share Action:** A "Share" option must be included in the context menu (three-dot menu) for every song, album, and playlist.
+
+- [ ] **Native Share Sheet:** Tapping "Share" must trigger the iOS/Android native share sheet, allowing direct sharing to WhatsApp, Instagram Stories, X (Twitter), etc.
+
+- [ ] **Clipboard Fallback:** The share menu must include a explicit "Copy Link" action that copies the URL to the clipboard and displays a toast notification ("Link copied!").
+
+- [ ] **Metadata Enrichment:** Shared links must include Open Graph meta tags so that social media platforms display the song title, artist, and album artwork beautifully in the chat preview.
+
+
+
+---
+
+
+
+### 📑 Story 6: Real-Time Collaborative Playlists
+
+* **As a** registered user  
+
+* **I want to** invite friends to join a shared playlist so we can all add, remove, and reorder tracks in real time  
+
+* **So that we can** curate the perfect soundtrack together for parties, trips, or group events  
+
+
+
+#### 📝 Description & Context
+
+This feature moves the application into a highly interactive, social space. It requires a duplex communication protocol (like WebSockets) to ensure that when one user mutates the playlist state (adds or moves a track), all other active collaborators see the update instantaneously without manual refreshing.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- The playlist creator retains "Admin" rights (can revoke access links or delete any contribution).
+
+- Client-side operational updates must be debounced and synchronized via a pub/sub architecture to prevent state conflicts when two users move tracks simultaneously.
+
+- Activity logs must be lightweight and indexed by a timestamp server-side.
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Collaborator Invitation:** A distinct "Invite Collaborators" button must be present inside the playlist header, generating a unique, time-sensitive access token link (`/playlist/id?token=xyz`).
+
+- [ ] **Real-Time Synchronized UI:** Any modification (adding a song, deleting a song, or changing track hierarchy via drag-and-drop) must reflect on all connected collaborators' screens within 500ms.
+
+- [ ] **Presence & Attribution Indicators:** The UI must display mini circular avatars of currently active users at the top of the playlist, and show a small label next to each song indicating who added it (e.g., "Added by Lucas").
+
+- [ ] **Conflict Resolution State:** If a track is deleted by the admin while another user is listening to it or moving it, the app must gracefully fade out the element and show a non-intrusive toast notification ("This track was removed by the host").
+
+---
 
 ## 🔴 High Priority: Core Capabilities (Value & Urgency)
 

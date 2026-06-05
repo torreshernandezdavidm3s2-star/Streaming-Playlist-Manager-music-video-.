@@ -2,10 +2,8 @@
 
 
 
-## The Vision
-For independent music creators and avid listeners who struggle with cluttered, non-intuitive, or highly restrictive audio platforms, the **NextGen Music Platform** is a decentralized-feeling ecosystem that seamlessly bridges the gap between high-fidelity music streaming and effortless community sharing.
-
-Unlike traditional streaming giants with rigid barrier entries and opaque algorithms, our platform delivers an ultra-fast, accessible, and deeply personalized music management experience right from your browser.
+## 🎯 Sprint Goal
+**Enable the operational core of the streaming ecosystem by deploying a functional audio pipeline (supporting file ingestion up to 50MB and persistent playback with pre-buffering via the Web Audio API) alongside a secure JWT authentication system, allowing users to seamlessly discover and consume content directly from the browser.**
 
 ---
 

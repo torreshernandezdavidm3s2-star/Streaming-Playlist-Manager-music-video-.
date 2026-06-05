@@ -70,6 +70,172 @@ El Scrum Master mantendrá un monitoreo diario sobre los siguientes riesgos de b
 
 ---
 
+## User Histories
+
+### 📑 Story 1: Smart Recommendations (Recommendation Engine)
+
+* **As a** registered user  
+
+* **I want to** receive a dynamic list of personalized song recommendations on my home screen  
+
+* **So that I can** effortlessly discover new music that aligns with my current listening habits  
+
+
+
+#### 📝 Description & Context
+
+The application needs a recommendation algorithm that analyzes user behavior. Instead of static suggestions, the system should track user interactions (plays, skips, likes) to build a taste profile.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- Recommendations should update asynchronously so the user doesn't experience UI lag.
+
+- A song should not be recommended if the user has skipped it within the first 30 seconds more than 3 times.
+
+- Newly released songs from favored artists should be prioritized in the mix.
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Home Screen Integration:** A dedicated, visually distinct section named "Recommended for You" must appear on the main dashboard.
+
+- [ ] **Data Source Baseline:** The engine must utilize the user's top 3 most played genres and top 5 artists from the last 30 days to generate the initial list.
+
+- [ ] **Cold Start Handling:** If a user is new and has no history, the app must display the top global/local hits instead of an empty state.
+
+- [ ] **Automated Refresh:** The recommendation list must automatically refresh every 24 hours or when the user manually triggers a "pull-to-refresh" gesture.
+
+
+
+---
+
+
+
+
+
+### 📑 Story 3: Attractive & Intuitive Interface (UX/UI Framework)
+
+* **As a** mobile user  
+
+* **I want to** navigate a modern, responsive, and visually appealing interface  
+
+* **So that I can** easily control playback and browse content without frustration  
+
+
+
+#### 📝 Description & Context
+
+The interface needs to follow modern design systems (like Material Design or Human Interface Guidelines). The focus is on minimizing user friction, reducing the number of taps to play a song, and maintaining visual consistency.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- The app must support both Light and Dark modes, adapting to system settings by default.
+
+- Navigation transitions must be smooth (targeting 60fps animations).
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Persistent Mini-Player:** A persistent playback bar (showing play/pause, song title, and thumbnail) must remain visible at the bottom of the screen while navigating other sections.
+
+- [ ] **Navigation Hierarchy:** A clean bottom navigation bar with no more than 4 primary destinations (Home, Search, Library, Settings).
+
+- [ ] **Visual Accessibility:** Colors and contrast ratios must meet WCAG AA standards to ensure readability under direct sunlight.
+
+- [ ] **Gesture Support:** Implement intuitive gestures, such as swiping the mini-player up to expand into full-screen player mode, and swiping left/right to skip tracks.
+
+
+
+---
+
+
+
+### 📑 Story 4: Advanced Search & Filtering
+
+* **As a** user  
+
+* **I want to** search for music using partial text queries and refine results by specific categories  
+
+* **So that I can** find exactly what I want to hear within seconds  
+
+
+
+#### 📝 Description & Context
+
+The search engine should be highly responsive, offering real-time suggestions as the user types. It needs to handle typos gracefully and categorize results clearly.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- Search queries must be debounced by 300ms to avoid overloading the backend API with requests on every keystroke.
+
+- Search history should be saved locally on the device (up to 10 recent items).
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Global Search Input:** A prominent search bar at the top of the search tab that focuses automatically when tapped.
+
+- [ ] **Categorized Results:** Results must be segmented into clear sections: *Top Result*, *Songs*, *Artists*, *Albums*, and *Playlists*.
+
+- [ ] **Interactive Filters:** Tapping on pill-shaped filter buttons (e.g., "[Songs]", "[Artists]") below the search bar must instantly isolate that specific category.
+
+- [ ] **Fuzzy Matching:** The search must return relevant results even if the user misspells a word by 1 or 2 characters (e.g., searching "Bitles" should still show "The Beatles").
+
+
+
+---
+
+
+
+### 📑 Story 6: Real-Time Collaborative Playlists
+
+* **As a** registered user  
+
+* **I want to** invite friends to join a shared playlist so we can all add, remove, and reorder tracks in real time  
+
+* **So that we can** curate the perfect soundtrack together for parties, trips, or group events  
+
+
+
+#### 📝 Description & Context
+
+This feature moves the application into a highly interactive, social space. It requires a duplex communication protocol (like WebSockets) to ensure that when one user mutates the playlist state (adds or moves a track), all other active collaborators see the update instantaneously without manual refreshing.
+
+
+
+#### ⚙️ Business Rules & Technical Notes
+
+- The playlist creator retains "Admin" rights (can revoke access links or delete any contribution).
+
+- Client-side operational updates must be debounced and synchronized via a pub/sub architecture to prevent state conflicts when two users move tracks simultaneously.
+
+- Activity logs must be lightweight and indexed by a timestamp server-side.
+
+
+
+#### 📋 Detailed Acceptance Criteria
+
+- [ ] **Collaborator Invitation:** A distinct "Invite Collaborators" button must be present inside the playlist header, generating a unique, time-sensitive access token link (`/playlist/id?token=xyz`).
+
+- [ ] **Real-Time Synchronized UI:** Any modification (adding a song, deleting a song, or changing track hierarchy via drag-and-drop) must reflect on all connected collaborators' screens within 500ms.
+
+- [ ] **Presence & Attribution Indicators:** The UI must display mini circular avatars of currently active users at the top of the playlist, and show a small label next to each song indicating who added it (e.g., "Added by Lucas").
+
+- [ ] **Conflict Resolution State:** If a track is deleted by the admin while another user is listening to it or moving it, the app must gracefully fade out the element and show a non-intrusive toast notification ("This track was removed by the host").
+
+
+
+
+---
 ## 🔴 High Priority: Core Capabilities (Value & Urgency)
 
 ### 🧪 US-01: User Registration and Login

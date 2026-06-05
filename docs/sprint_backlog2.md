@@ -122,46 +122,6 @@ This feature utilizes the device's native sharing sheet to provide a seamless cr
 
 ---
 
-
-
-### 📑 Story 6: Real-Time Collaborative Playlists
-
-* **As a** registered user  
-
-* **I want to** invite friends to join a shared playlist so we can all add, remove, and reorder tracks in real time  
-
-* **So that we can** curate the perfect soundtrack together for parties, trips, or group events  
-
-
-
-#### 📝 Description & Context
-
-This feature moves the application into a highly interactive, social space. It requires a duplex communication protocol (like WebSockets) to ensure that when one user mutates the playlist state (adds or moves a track), all other active collaborators see the update instantaneously without manual refreshing.
-
-
-
-#### ⚙️ Business Rules & Technical Notes
-
-- The playlist creator retains "Admin" rights (can revoke access links or delete any contribution).
-
-- Client-side operational updates must be debounced and synchronized via a pub/sub architecture to prevent state conflicts when two users move tracks simultaneously.
-
-- Activity logs must be lightweight and indexed by a timestamp server-side.
-
-
-
-#### 📋 Detailed Acceptance Criteria
-
-- [ ] **Collaborator Invitation:** A distinct "Invite Collaborators" button must be present inside the playlist header, generating a unique, time-sensitive access token link (`/playlist/id?token=xyz`).
-
-- [ ] **Real-Time Synchronized UI:** Any modification (adding a song, deleting a song, or changing track hierarchy via drag-and-drop) must reflect on all connected collaborators' screens within 500ms.
-
-- [ ] **Presence & Attribution Indicators:** The UI must display mini circular avatars of currently active users at the top of the playlist, and show a small label next to each song indicating who added it (e.g., "Added by Lucas").
-
-- [ ] **Conflict Resolution State:** If a track is deleted by the admin while another user is listening to it or moving it, the app must gracefully fade out the element and show a non-intrusive toast notification ("This track was removed by the host").
-
----
-
 ## 🔴 High Priority: Core Capabilities (Value & Urgency)
 
 ### 🧪 US-02: Profile Customization

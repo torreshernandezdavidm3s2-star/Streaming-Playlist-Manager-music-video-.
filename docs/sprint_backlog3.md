@@ -35,7 +35,51 @@ With a stable platform, personal curation capabilities, and a defined visual ide
   * *Mitigation:* Ensure atomic database writes for downloaded file segments and enforce strict MD5 hash integrity checks (`TSK-07.4`) before marking a track as completely available for offline use.
 
 ---
+## User Histories
 
+
+### 📑 Story 7: Gapless Playback & Crossfade Engine
+* **As an** avid music listener  
+* **I want to** configure custom crossfade transitions between songs and enable gapless transitions  
+* **So that I can** enjoy a continuous, professional audio experience without abrupt silences between tracks  
+
+#### 📝 Description & Context
+To rival industry standards, the audio engine cannot rely on basic HTML5 sequential audio tags, which introduce a noticeable click or lag when switching data streams. This requires utilizing dual audio nodes within the Web Audio API to pre-buffer the upcoming track in a hidden background channel and blend its gain with the active track.
+
+#### ⚙️ Business Rules & Technical Notes
+- Crossfade configuration must range dynamically from 0 seconds (strict gapless) to 12 seconds.
+- Pre-buffering for the next track must initiate exactly 15 seconds before the current track terminates to accommodate slower network connections.
+- Lossless formats (FLAC/ALAC) must pass through a client-side linear gain node adjustment to prevent decibel clipping during overlaps.
+
+#### 📋 Detailed Acceptance Criteria
+- [ ] **Audio Settings Panel:** A slider control labeled "Crossfade" must be added to the Playback Settings page, allowing increments of 1 second up to 12 seconds.
+- [ ] **Gapless Execution:** When crossfade is set to 0s, the player must stitch consecutive tracks together with 0ms of latency, eliminating the typical browser decoding silence gap.
+- [ ] **Dynamic Overlap Gain Curve:** During a crossfade transition, the volume of Track A must mathematically decrease exponentially while Track B increases linearly over the selected duration window.
+- [ ] **Manual Skip Overrides:** If a user manually presses the "Next" button, the active crossfade timer must be bypassed, instantly fading out the current track over a rapid 300ms window to maintain snappiness.
+
+---
+
+### 📑 Story 8: Creator Analytics Dashboard
+* **As an** independent music creator  
+* **I want to** access a dedicated data portal showcasing real-time streaming metrics, listener locations, and track performance  
+* **So that I can** effectively understand my audience demographics and optimize my distribution strategies  
+
+#### 📝 Description & Context
+This story addresses the platform's data transparency pillar. Independent artists need clear access to their streaming footprints without waiting for monthly distribution reports. The backend must securely aggregate massive time-series ingestion events without bottlenecking transactional operations.
+
+#### ⚙️ Business Rules & Technical Notes
+- Analytics endpoints must query an optimized, read-heavy aggregated replica database rather than mutating production tables directly.
+- Location metrics must be derived via anonymized IP reverse-geocoding at the API gateway level, maintaining strict user privacy compliance.
+
+#### 📋 Detailed Acceptance Criteria
+- [ ] **Creator Portal Entry:** Users flagged with "Creator Status" must see an exclusive "Studio Analytics" option within their primary profile navigation hub.
+- [ ] **Timeframe Granularity Toggles:** The dashboard must include filter tabs to view data performance metrics over isolated temporal windows: *Last 24 Hours*, *7 Days*, *30 Days*, and *All-Time*.
+- [ ] **Key Performance Metric Cards:** Visual telemetry readouts must explicitly display: Total Streams, Unique Listeners, Total Playlist Adds, and an interactive graph showing peak listening times.
+- [ ] **Anonymized Demographic Map:** A simplified geographical layout chart must highlight the top 5 cities and countries driving the creator's stream volume, updated every 6 hours.
+
+
+
+---
 ## 🟢 High Priority: Advanced Access & Viral Growth (Value & Urgency)
 
 ### 🧪 US-07: Offline Listening

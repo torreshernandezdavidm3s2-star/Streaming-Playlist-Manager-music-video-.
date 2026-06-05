@@ -106,4 +106,64 @@ This feature utilizes the device's native sharing sheet to provide a seamless cr
 - [ ] **Clipboard Fallback:** The share menu must include a explicit "Copy Link" action that copies the URL to the clipboard and displays a toast notification ("Link copied!").
 - [ ] **Metadata Enrichment:** Shared links must include Open Graph meta tags so that social media platforms display the song title, artist, and album artwork beautifully in the chat preview.
 
+---
 
+### 📑 Story 6: Real-Time Collaborative Playlists
+* **As a** registered user  
+* **I want to** invite friends to join a shared playlist so we can all add, remove, and reorder tracks in real time  
+* **So that we can** curate the perfect soundtrack together for parties, trips, or group events  
+
+#### 📝 Description & Context
+This feature moves the application into a highly interactive, social space. It requires a duplex communication protocol (like WebSockets) to ensure that when one user mutates the playlist state (adds or moves a track), all other active collaborators see the update instantaneously without manual refreshing.
+
+#### ⚙️ Business Rules & Technical Notes
+- The playlist creator retains "Admin" rights (can revoke access links or delete any contribution).
+- Client-side operational updates must be debounced and synchronized via a pub/sub architecture to prevent state conflicts when two users move tracks simultaneously.
+- Activity logs must be lightweight and indexed by a timestamp server-side.
+
+#### 📋 Detailed Acceptance Criteria
+- [ ] **Collaborator Invitation:** A distinct "Invite Collaborators" button must be present inside the playlist header, generating a unique, time-sensitive access token link (`/playlist/id?token=xyz`).
+- [ ] **Real-Time Synchronized UI:** Any modification (adding a song, deleting a song, or changing track hierarchy via drag-and-drop) must reflect on all connected collaborators' screens within 500ms.
+- [ ] **Presence & Attribution Indicators:** The UI must display mini circular avatars of currently active users at the top of the playlist, and show a small label next to each song indicating who added it (e.g., "Added by Lucas").
+- [ ] **Conflict Resolution State:** If a track is deleted by the admin while another user is listening to it or moving it, the app must gracefully fade out the element and show a non-intrusive toast notification ("This track was removed by the host").
+
+---
+
+### 📑 Story 7: Gapless Playback & Crossfade Engine
+* **As an** avid music listener  
+* **I want to** configure custom crossfade transitions between songs and enable gapless transitions  
+* **So that I can** enjoy a continuous, professional audio experience without abrupt silences between tracks  
+
+#### 📝 Description & Context
+To rival industry standards, the audio engine cannot rely on basic HTML5 sequential audio tags, which introduce a noticeable click or lag when switching data streams. This requires utilizing dual audio nodes within the Web Audio API to pre-buffer the upcoming track in a hidden background channel and blend its gain with the active track.
+
+#### ⚙️ Business Rules & Technical Notes
+- Crossfade configuration must range dynamically from 0 seconds (strict gapless) to 12 seconds.
+- Pre-buffering for the next track must initiate exactly 15 seconds before the current track terminates to accommodate slower network connections.
+- Lossless formats (FLAC/ALAC) must pass through a client-side linear gain node adjustment to prevent decibel clipping during overlaps.
+
+#### 📋 Detailed Acceptance Criteria
+- [ ] **Audio Settings Panel:** A slider control labeled "Crossfade" must be added to the Playback Settings page, allowing increments of 1 second up to 12 seconds.
+- [ ] **Gapless Execution:** When crossfade is set to 0s, the player must stitch consecutive tracks together with 0ms of latency, eliminating the typical browser decoding silence gap.
+- [ ] **Dynamic Overlap Gain Curve:** During a crossfade transition, the volume of Track A must mathematically decrease exponentially while Track B increases linearly over the selected duration window.
+- [ ] **Manual Skip Overrides:** If a user manually presses the "Next" button, the active crossfade timer must be bypassed, instantly fading out the current track over a rapid 300ms window to maintain snappiness.
+
+---
+
+### 📑 Story 8: Creator Analytics Dashboard
+* **As an** independent music creator  
+* **I want to** access a dedicated data portal showcasing real-time streaming metrics, listener locations, and track performance  
+* **So that I can** effectively understand my audience demographics and optimize my distribution strategies  
+
+#### 📝 Description & Context
+This story addresses the platform's data transparency pillar. Independent artists need clear access to their streaming footprints without waiting for monthly distribution reports. The backend must securely aggregate massive time-series ingestion events without bottlenecking transactional operations.
+
+#### ⚙️ Business Rules & Technical Notes
+- Analytics endpoints must query an optimized, read-heavy aggregated replica database rather than mutating production tables directly.
+- Location metrics must be derived via anonymized IP reverse-geocoding at the API gateway level, maintaining strict user privacy compliance.
+
+#### 📋 Detailed Acceptance Criteria
+- [ ] **Creator Portal Entry:** Users flagged with "Creator Status" must see an exclusive "Studio Analytics" option within their primary profile navigation hub.
+- [ ] **Timeframe Granularity Toggles:** The dashboard must include filter tabs to view data performance metrics over isolated temporal windows: *Last 24 Hours*, *7 Days*, *30 Days*, and *All-Time*.
+- [ ] **Key Performance Metric Cards:** Visual telemetry readouts must explicitly display: Total Streams, Unique Listeners, Total Playlist Adds, and an interactive graph showing peak listening times.
+- [ ] **Anonymized Demographic Map:** A simplified geographical layout chart must highlight the top 5 cities and countries driving the creator's stream volume, updated every 6 hours.

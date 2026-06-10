@@ -26,7 +26,7 @@
 
 <!-- 🎵 MAIN GIF -->
 <p align="center">
-  <img src="https://i.pinimg.com/originals/19/34/af/1934afbf267c2334a1e7f7509d212f62.gif" width="650"/>
+  <img src="https://media.tenor.com/gltwWQuK0R8AAAAM/dancing-pibble-dancing-french-bulldog.gif" width="350"/>
 </p>
 
 ---
@@ -34,7 +34,7 @@
 # 🎯 Project Title
 
 <p align="center">
-  <img src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" width="500"/>
+  <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTllMWNtY3RubGt3b3lnd2NqeHp4cjI5dGZpMWMyczVobDNkam81ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/69MhlsEqjXu1Yl8vI2/giphy.gif" width="400"/>
 </p>
 
 ## Music Streaming Player

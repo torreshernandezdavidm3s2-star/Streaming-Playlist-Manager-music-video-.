@@ -41,14 +41,25 @@
 
 A modern music streaming and playlist management application designed to provide users with a clean, fast, and interactive multimedia experience.
 
+### 🌐 Live Demo
+
+https://music-streaming-player.onrender.com/
+
+### 📂 Source Code Repository
+
+https://github.com/Lopez-Torres-Erick-de-Jesus/musicdb
+
 ### ✨ Features
 
-- 🎵 Music playback  
-- 📂 Playlist management  
-- ➕ Add and remove songs  
-- ▶️ Audio controls  
-- 📱 Responsive interface  
-- 🚀 Smooth streaming experience  
+- 🎵 Music streaming and playback
+- 📂 Playlist management
+- ☁️ Cloudinary media integration
+- 🔍 Music scanner functionality
+- 🎨 Dynamic theme system
+- 📱 Responsive interface
+- 🚀 Fast streaming experience
+- 🎶 Multimedia content management
+- 🌐 Online deployment with Render
 
 ---
 
@@ -60,11 +71,10 @@ A modern music streaming and playlist management application designed to provide
 
 - [Project Title](#-project-title)
 - [Getting Started](#-getting-started)
-  - [Prerequisites](#-prerequisites)
-  - [Installation](#️-installation)
+- [Prerequisites](#-prerequisites)
+- [Installation](#️-installation)
 - [Usage Examples](#-usage-examples)
 - [Architecture](#️-architecture)
-- [Tech Stack](#-tech-stack)
 - [Running Tests](#-running-tests)
 - [Contributing](#-contributing)
 
@@ -76,7 +86,7 @@ A modern music streaming and playlist management application designed to provide
   <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="500"/>
 </p>
 
-Welcome to the **Music Streaming Player** project.
+Welcome to the *Music Streaming Player* project.
 
 This project was created to simulate a modern streaming platform where users can listen to music, manage playlists, and interact with multimedia content through a visually attractive interface.
 
@@ -90,10 +100,10 @@ This project was created to simulate a modern streaming platform where users can
 
 Before running the project, install the following tools:
 
-- Node.js  
-- Git  
-- VS Code  
-- Google Chrome  
+- Node.js
+- Git
+- VS Code
+- Google Chrome
 
 ---
 
@@ -105,41 +115,47 @@ Before running the project, install the following tools:
 
 ## 1️⃣ Clone the Repository
 
-```bash
-git clone https://github.com/your-username/music-streaming-player.git
-```
+bash
+git clone https://github.com/torreshernandezdavidm3s2-star/Streaming-Playlist-Manager-music-video-.git
+
 
 ---
 
 ## 2️⃣ Enter the Project Folder
 
-```bash
-cd music-streaming-player
-```
+bash
+cd HFI 2.1
+
 
 ---
 
 ## 3️⃣ Install Dependencies
 
-```bash
+bash
 npm install
-```
+
 
 ---
 
 ## 4️⃣ Run the Application
 
-```bash
+bash
 npm start
-```
+
 
 ---
 
 ## 5️⃣ Open the Application
 
-```bash
+bash
 http://localhost:3000
-```
+
+
+Or access the deployed version:
+
+bash
+https://music-streaming-player.onrender.com/
+
 
 ---
 
@@ -151,34 +167,34 @@ http://localhost:3000
 
 ## ▶️ Play Music
 
-```javascript
+javascript
 const audio = new Audio("song.mp3");
 audio.play();
-```
+
 
 ---
 
 ## ⏸️ Pause Music
 
-```javascript
+javascript
 audio.pause();
-```
+
 
 ---
 
 ## ➕ Add Songs to Playlist
 
-```javascript
+javascript
 playlist.push("New Song");
-```
+
 
 ---
 
 ## ❌ Remove Songs
 
-```javascript
+javascript
 playlist.splice(index, 1);
-```
+
 
 ---
 
@@ -196,7 +212,7 @@ playlist.splice(index, 1);
   <img src="https://media.giphy.com/media/f3iwJFOVOwuy7K6FFw/giphy.gif" width="450"/>
 </p>
 
-```mermaid
+mermaid
 graph TD
 A[👤 User] --> B[🎧 Music Player]
 B --> C[📂 Playlist Manager]
@@ -204,30 +220,56 @@ C --> D[🎵 Songs]
 B --> E[▶️ Play Music]
 B --> F[⏸️ Pause Music]
 B --> G[❌ Delete Songs]
-```
+B --> H[☁️ Cloudinary Storage]
+
 
 ---
 
 ## 📂 Project Structure
 
-```bash
+bash
 Music-Streaming-Player/
 │
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── app.js
+├── covers/
+│   └── Album cover images
 │
-├── backend/
-│   └── server.js
+├── music/
+│   └── Audio files
 │
-├── assets/
-│   ├── music/
-│   └── images/
+├── node_modules/
+│   └── Project dependencies
 │
-├── README.md
-└── package.json
-```
+├── .env
+│   └── Environment variables
+│
+├── about.html
+│   └── About page
+│
+├── index.html
+│   └── Main application page
+│
+├── app.js
+│   └── Main application logic
+│
+├── cloudinary.js
+│   └── Cloudinary configuration
+│
+├── scanner.js
+│   └── Music scanner module
+│
+├── server.js
+│   └── Backend server
+│
+├── style.css
+│   └── Application styles
+│
+├── theme.js
+│   └── Theme customization
+│
+├── package.json
+├── package-lock.json
+└── README.md
+
 
 ---
 
@@ -247,8 +289,26 @@ Music-Streaming-Player/
 | Node.js | Backend runtime |
 | HTML5 | Structure and layout |
 | CSS3 | Styling and animations |
+| Cloudinary | Media storage and management |
+| Render | Cloud deployment platform |
 | GitHub | Repository hosting |
 | VS Code | Development environment |
+
+---
+
+# 🌐 Deployment
+
+<p align="center">
+  <img src="https://media.giphy.com/media/h408T6Y5GfmXBKW62l/giphy.gif" width="450"/>
+</p>
+
+### Live Application
+
+https://music-streaming-player.onrender.com/
+
+### GitHub Repository
+
+https://github.com/Lopez-Torres-Erick-de-Jesus/musicdb
 
 ---
 
@@ -260,20 +320,21 @@ Music-Streaming-Player/
 
 Run the following command to execute tests:
 
-```bash
+bash
 npm test
-```
+
 
 ---
 
 ## ✅ Example Output
 
-```bash
-✔ Music player initialized
-✔ Playlist loaded successfully
-✔ Audio controls working
-✔ All tests passed
-```
+bash
+✔️ Music player initialized
+✔️ Playlist loaded successfully
+✔️ Audio controls working
+✔️ Cloudinary connection established
+✔️ All tests passed
+
 
 ---
 
@@ -303,12 +364,12 @@ Contributions are welcome!
 
 To contribute to this project:
 
-1. Fork the repository  
-2. Create a new branch  
-3. Make your improvements  
-4. Commit your changes  
-5. Push your branch  
-6. Open a Pull Request  
+1. Fork the repository
+2. Create a new branch
+3. Make your improvements
+4. Commit your changes
+5. Push your branch
+6. Open a Pull Request
 
 ---
 

@@ -8,4 +8,4 @@ Notes: There is a small error in the video. I decided to leave it as it is becau
 
 That would be all. Thank you very much for your time and attention.
 
-Best regards.
+
